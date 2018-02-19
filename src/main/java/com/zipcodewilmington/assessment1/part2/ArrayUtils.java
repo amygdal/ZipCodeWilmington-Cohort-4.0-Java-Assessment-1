@@ -1,6 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -34,16 +36,21 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Integer[] removeValue(Integer[] intArray, Integer intToRemove) {
-        Integer[] arrayToReturn = {};
+        List<Integer> amysList = new ArrayList<Integer>();
 
         for (Integer element: intArray){
-            if (!element.equals(intToRemove)) {
-                //arrayToReturn[element] = Arrays.copyOf(arrayToReturn, arrayToReturn.length + 1);
+            if (!element.equals(intToRemove)){
+                amysList.add(element);
             }
         }
 
-        Integer[] answer = {};
-        return answer;
+        System.out.println(amysList);
+
+        Integer[] answerArray = new Integer[amysList.size()];
+        for (int i = 0; i < answerArray.length; i++){
+            answerArray[i] = amysList.get(i);
+        }
+        return answerArray;
 
     }
 
