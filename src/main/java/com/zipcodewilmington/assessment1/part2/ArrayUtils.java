@@ -44,8 +44,6 @@ public class ArrayUtils {
             }
         }
 
-        System.out.println(amysList);
-
         Integer[] answerArray = new Integer[amysList.size()];
         for (int i = 0; i < answerArray.length; i++){
             answerArray[i] = amysList.get(i);
@@ -82,13 +80,21 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Integer[] mergeArrays(Integer[] intArray, Integer[] intArrayToAdd) {
-        Integer[] mergedArray = {};
 
-        Arrays.toString(intArray);
-        Arrays.toString(intArrayToAdd);
+        List<Integer> amysList = new ArrayList<Integer>();
 
+        for (Integer element: intArray){
+            amysList.add(element);
+            }
+        for (Integer element: intArrayToAdd){
+            amysList.add(element);
+        }
 
+        Integer[] answerArray = new Integer[amysList.size()];
+        for (int i = 0; i < answerArray.length; i++){
+            answerArray[i] = amysList.get(i);
+        }
+        return answerArray;
 
-        return mergedArray;
     }
 }
