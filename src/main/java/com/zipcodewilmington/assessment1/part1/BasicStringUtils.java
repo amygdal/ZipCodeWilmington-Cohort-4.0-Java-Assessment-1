@@ -9,7 +9,12 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+
+        String letterToCap = str.substring(0,1).toUpperCase();
+        String restOfWord = str.substring(1);
+        String finalWordReadyToReturn = letterToCap + restOfWord;
+
+        return finalWordReadyToReturn;
     }
 
     /**
@@ -17,7 +22,10 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        StringBuilder builder = new StringBuilder(str);
+        String reversedString = builder.reverse().toString();
+
+        return reversedString;
     }
 
     /**
@@ -25,7 +33,8 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+       String reversedString = reverse(str);
+        return camelCase(reversedString);
     }
 
 
@@ -34,7 +43,11 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+        StringBuilder builder = new StringBuilder(str);
+        String firstLetterRemoved = builder.substring(1);
+        String lastLetterRemoved = firstLetterRemoved.substring(0,firstLetterRemoved.length()-1);
+
+        return lastLetterRemoved;
     }
 
     /**
@@ -42,6 +55,17 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        char[] strToCharArray = str.toCharArray();
+
+        for (int i = 0; i < strToCharArray.length; i++){
+            char charToCheck = strToCharArray[i];
+            if (Character.isUpperCase(charToCheck)){
+                strToCharArray[i] = Character.toLowerCase(charToCheck);
+            } else if (Character.isLowerCase(charToCheck)){
+                strToCharArray[i]=Character.toUpperCase(charToCheck);
+            }
+        }
+
+        return new String(strToCharArray);
     }
 }
