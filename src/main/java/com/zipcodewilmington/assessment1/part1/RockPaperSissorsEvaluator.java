@@ -68,7 +68,6 @@ public class RockPaperSissorsEvaluator {
             winner = "rock";
         }
 
-
         return winner;
     }
 }
