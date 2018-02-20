@@ -38,13 +38,13 @@ public class RockPaperSissorsEvaluatorTest {
     @Test
     public void getWinnerTest() {
         // Given
-        String input1 = "rock";
-        String input2 = "scissors";
+        String handSignOfPlayer1 = "rock";
+        String handSignOfPlayer2 = "scissor";
         String expected = "rock";
         RockPaperSissorsEvaluator rps = new RockPaperSissorsEvaluator();
 
         // When
-        String actual = rps.getWinner(input1, input2);
+        String actual = rps.getWinner(handSignOfPlayer1, handSignOfPlayer2);
 
         // Then
         Assert.assertEquals(expected, actual);

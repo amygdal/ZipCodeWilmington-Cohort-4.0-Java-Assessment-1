@@ -51,27 +51,24 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        RockPaperSissorsEvaluator rps = new RockPaperSissorsEvaluator();
+
+        String winner = "";
+
+        if (handSignOfPlayer1.equalsIgnoreCase("rock") && handSignOfPlayer2.equalsIgnoreCase("paper")) {
+            winner = "paper";
+        } else if (handSignOfPlayer1.equalsIgnoreCase("paper") && handSignOfPlayer2.equalsIgnoreCase("scissor")) {
+            winner = "scissor";
+        } else if (handSignOfPlayer1.equalsIgnoreCase("scissors") && handSignOfPlayer2.equalsIgnoreCase("rock")) {
+            winner = "rock";
+        } else if (handSignOfPlayer2.equalsIgnoreCase("rock") && handSignOfPlayer1.equalsIgnoreCase("paper")) {
+            winner = "paper";
+        } else if(handSignOfPlayer2.equalsIgnoreCase("paper") && handSignOfPlayer1.equalsIgnoreCase("scissor")) {
+            winner = "scissor";
+        } else if(handSignOfPlayer2.equalsIgnoreCase("scissor") && handSignOfPlayer1.equalsIgnoreCase("rock")) {
+            winner = "rock";
+        }
 
 
-        //String rps = "";
-//
-//        if (handSignOfPlayer1.equalsIgnoreCase("rock") && handSignOfPlayer2.equalsIgnoreCase("paper")) {
-//            rps = "paper";
-//        } else if (handSignOfPlayer1.equalsIgnoreCase("paper") && handSignOfPlayer2.equalsIgnoreCase("scissor")) {
-//            rps = "scissor";
-//        } else if (handSignOfPlayer1.equalsIgnoreCase("scissor") && handSignOfPlayer2.equalsIgnoreCase("rock")) {
-//            rps = "rock";
-//        } else if (handSignOfPlayer2.equalsIgnoreCase("rock") && handSignOfPlayer1.equalsIgnoreCase("paper")) {
-//            rps = "paper";
-//        } else if(handSignOfPlayer2.equalsIgnoreCase("paper") && handSignOfPlayer1.equalsIgnoreCase("scissor")) {
-//            rps = "scissor";
-//        } else if(handSignOfPlayer1.equalsIgnoreCase("scissor") && handSignOfPlayer2.equalsIgnoreCase("rock")) {
-//            rps = "rock";
-//        }
-
-         //return rps.getWinner(handSignOfPlayer1, handSignOfPlayer2);
-
-        return null;
+        return winner;
     }
 }
