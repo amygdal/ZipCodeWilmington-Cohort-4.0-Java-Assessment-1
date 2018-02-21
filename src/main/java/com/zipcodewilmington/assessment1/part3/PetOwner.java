@@ -6,10 +6,8 @@ import java.util.TreeMap;
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
-    String name;
-    int age;
-    Pet pet;
-    PetOwner owner;
+   private String name;
+   private Pet[] petlist;
 
     TreeMap<Pet, PetOwner> petOwnerTreeMap = new TreeMap<Pet, PetOwner>();
 
@@ -17,9 +15,12 @@ public class PetOwner {
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
-    public PetOwner(String name, Pet[] pets) {
+    public PetOwner(String name, Pet... pets) {
    // PetOwner newOwner = new PetOwner(name, pets);
-
+this.name=name;
+if (pets == null){
+    //this.petList = new Pet[0];
+}
     }
 
     /**
