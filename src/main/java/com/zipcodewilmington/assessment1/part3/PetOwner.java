@@ -1,32 +1,41 @@
 package com.zipcodewilmington.assessment1.part3;
 
-import java.util.TreeMap;
+import java.util.Arrays;
 
 /**
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
    private String name;
-   private Pet[] petlist;
+   private Pet[] petManifest;
 
-    TreeMap<Pet, PetOwner> petOwnerTreeMap = new TreeMap<Pet, PetOwner>();
+    //TreeMap<Pet, PetOwner> petOwnerTreeMap = new TreeMap<Pet, PetOwner>();
 
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
     public PetOwner(String name, Pet... pets) {
-   // PetOwner newOwner = new PetOwner(name, pets);
-this.name=name;
-if (pets == null){
-    //this.petList = new Pet[0];
-}
+        this.name=name;
+        if (pets == null){
+            this.petManifest = new Pet[0];
+        }
+        else {
+            this.petManifest = new Pet[pets.length];
+            for (int i = 0; i < pets.length; i++){
+                this.petManifest[i] = pets[i];
+                pets[i].setOwner(this);
+            }
+        }
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
+        this.petManifest = Arrays.copyOf(this.petManifest, this.petManifest.length+1);
+        this.petManifest[this.petManifest.length-1]= pet;
+        pet.setOwner(this);
        //petOwnerTreeMap.put(pet);
     }
 
@@ -34,6 +43,13 @@ if (pets == null){
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
+        Pet [] tempArray = new Pet[this.petList.length];
+        for(Pet p : this.petList){
+            if (!p.equals(pet)){
+                tempArray[tempArray.length-1] = p;
+            }
+        }
+        this.petList = tempArray;
         //petOwnerTreeMap.remove(Pet);
     }
 
