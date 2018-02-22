@@ -40,10 +40,8 @@ public class StringUtils {
      */
     public static String reverseFirstWord(String sentence) {
         String firstWord = getFirstWord(sentence);
-        String firstWordReversed = reverse(firstWord).toLowerCase();
-        String answer = camelCase(firstWordReversed);
-
-        return answer;
+        String firstWordReversed = reverse(firstWord);
+        return firstWordReversed;
     }
 
     /**
