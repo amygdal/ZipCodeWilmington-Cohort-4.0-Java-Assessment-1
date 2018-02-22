@@ -43,13 +43,13 @@ public class PetOwner {
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
-        Pet [] tempArray = new Pet[this.petList.length];
-        for(Pet p : this.petList){
+        Pet [] tempArray = new Pet[this.petManifest.length];
+        for(Pet p : this.petManifest){
             if (!p.equals(pet)){
                 tempArray[tempArray.length-1] = p;
             }
         }
-        this.petList = tempArray;
+        this.petManifest = tempArray;
         //petOwnerTreeMap.remove(Pet);
     }
 
