@@ -14,8 +14,8 @@ public abstract class Pet implements Animal {
      * by default, pet has age of 0; name of "";
      */
     public Pet() {
-        this(0);
-        this.name = "";
+//        this(0);
+//        this.name = "";
     }
 
     /**

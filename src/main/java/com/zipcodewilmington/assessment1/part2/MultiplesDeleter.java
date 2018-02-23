@@ -23,6 +23,8 @@ public class MultiplesDeleter {
             }
         }
 
+        //return(Integer[]) result.toArray();
+
         Integer[] answerArray = new Integer[amysList.size()];
         for (int i = 0; i < answerArray.length; i++){
             answerArray[i] = amysList.get(i);
