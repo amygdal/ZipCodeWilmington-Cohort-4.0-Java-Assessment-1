@@ -5,21 +5,21 @@ package com.zipcodewilmington.assessment1.part1;
  */
 public class BasicArrayUtils {
     /**
-     * @param stringArray an array of String objects
+     * @param input an array of String objects
      * @return the first element in the array
      */
-    public static String getFirstElement(String[] stringArray) {
+    public static String getFirstElement(String[] input) {
 
-        return stringArray[0];
+        return input[0];
     }
 
     /**
-     * @param stringArray an array of String objects
+     * @param input an array of String objects
      * @return the second element in the array
      */
-    public static String getSecondElement(String[] stringArray) {
+    public static String getSecondElement(String[] input) {
 
-        return stringArray[1];
+        return input[1];
     }
 
     /**

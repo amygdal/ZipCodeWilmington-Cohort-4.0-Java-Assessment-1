@@ -74,16 +74,16 @@ public class ArrayUtils {
      */
     public static Object getMostCommon(Object[] objectArray) {
 
-        Integer count = 0;
-        Object obj = null;
+        Integer theLargestSoFar = 0;
+        Object mostCommonObject= null;
         for (int i=0; i < objectArray.length; i++) {
-            Integer n = getNumberOfOccurrences(objectArray, objectArray[i]);
-            if (n > count) {
-                count = n;
-                obj = objectArray[i];
+            Integer numberOfOccurrences = getNumberOfOccurrences(objectArray, objectArray[i]);
+            if (numberOfOccurrences > theLargestSoFar) {
+                theLargestSoFar = numberOfOccurrences;
+                mostCommonObject = objectArray[i];
             }
         }
-        return obj;
+        return mostCommonObject;
 
 //        Integer mostCommon = null;
 //        Integer numOfTimesWeveSeenTheMostCommon = 0;
